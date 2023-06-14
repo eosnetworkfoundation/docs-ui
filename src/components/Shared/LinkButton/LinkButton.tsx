@@ -3,12 +3,12 @@ import React from 'react';
 import styles from './styles.module.css';
 
 interface LinkButtonProps {
-  text: string;
+  children?: React.ReactNode;
   href: string;
   onClick?: () => void;
 }
 
-export const LinkButton = ({ text, href, onClick }: LinkButtonProps) => {
+export const LinkButton = ({ children, href, onClick }: LinkButtonProps) => {
   const handleClick = () => {
     if (onClick) {
       onClick();
@@ -17,7 +17,7 @@ export const LinkButton = ({ text, href, onClick }: LinkButtonProps) => {
 
   return (
     <a className={styles.linkButton} href={href} onClick={handleClick}>
-      {text}
+      {children}
     </a>
   );
 }

@@ -20,7 +20,7 @@ export default function LocaleDropdownNavbarItem({
 
   const { lang } = siteConfig.customFields.featureFlags;
 
-  if (!lang) {
+  if (lang) {
     const alternatePageUtils = useAlternatePageUtils();
     const localeItems = locales.map((locale) => {
       const to = `pathname://${alternatePageUtils.createUrl({

@@ -11,14 +11,11 @@ function Footer() {
   }
   const {copyright, links, logo, style} = footer;
 
-  const communityLinks = links.filter(link => link.title === 'Community')[0];
-  const termsAndPrivacyLinks = links.filter(link => link.title === 'Terms')[0];
-
   return (
     <FooterLayout
       style={style}
-      links={communityLinks && <FooterLinks links={communityLinks} />}
-      terms={termsAndPrivacyLinks}
+      links={links[1] && <FooterLinks links={links[1]} />}
+      terms={links[0]}
       logo={logo && <FooterLogo logo={logo} />}
       copyright={copyright && <FooterCopyright copyright={copyright} />}
     />

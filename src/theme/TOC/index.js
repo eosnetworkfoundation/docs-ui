@@ -121,48 +121,12 @@ export default function TOC({className, ...props}) {
     history.push(newPath);
   }
 
+  const tableOfContentsEmpty = props.toc.length === 0;
+
+  if(tableOfContentsEmpty) return null;
+
   return (
     <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
-      {/*<Select*/}
-      {/*  options={options}*/}
-      {/*  value={currentVersion}*/}
-      {/*  className={styles.select}*/}
-      {/*  onChange={handleOnChange}*/}
-      {/*  isSearchable={false}*/}
-      {/*  styles={{*/}
-      {/*    control: (provided, state) => ({*/}
-      {/*      ...provided,*/}
-      {/*      background: '#F4F5F6',*/}
-      {/*      borderRadius: '6px',*/}
-      {/*      height: '60px',*/}
-      {/*      width: '310px',*/}
-      {/*      margin: 'auto',*/}
-      {/*      outline: 'none',*/}
-      {/*      padding: '10px 24px'*/}
-      {/*    }),*/}
-      {/*    indicatorSeparator: (provided, state) => ({*/}
-      {/*      ...provided,*/}
-      {/*      display: 'none'*/}
-      {/*    }),*/}
-      {/*    dropdownIndicator: (provided, state) => ({*/}
-      {/*      ...provided,*/}
-      {/*      color: '#000000',*/}
-      {/*      padding: '0px 10px'*/}
-      {/*    }),*/}
-      {/*    menu: (provided, state) => ({*/}
-      {/*      ...provided,*/}
-      {/*      background: '#F4F5F6',*/}
-      {/*      borderRadius: '6px',*/}
-      {/*      width: '310px',*/}
-      {/*      margin: 'auto',*/}
-      {/*      outline: 'none',*/}
-      {/*    }),*/}
-      {/*    menuList: (provided, state) => ({*/}
-      {/*      ...provided,*/}
-      {/*      padding: '0px'*/}
-      {/*    }),*/}
-      {/*  }}*/}
-      {/*  />*/}
       {canEditOrSuggest && <div className={clsx(styles.linkContainer, props.toc.length && styles.linkContainerWithTOC)}>
         <a className={styles.link} href={suggestEditsLink} target="_blank">
           <FontAwesomeIcon icon={faBug} />&nbsp; Suggest Edits

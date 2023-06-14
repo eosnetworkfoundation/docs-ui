@@ -27,7 +27,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'], // , 'zh', 'ko'
+    locales: ['en', 'zh', 'ko'],
     path: 'i18n',
     localeConfigs: {
       en: {
@@ -144,63 +144,10 @@ const config = {
 
   // custom fields for nav bar
   customFields: {
-    navbar: {
-      logo: {
-        alt: 'EOS Network',
-        src: 'img/eosn_logo_light.png',
-      },
-      items: [
-        {
-          type: 'dropdown',
-          label: 'Learn',
-          position: 'left',
-          items: [
-            {
-              label: 'Smart Contracts', // This label is used for mobile view
-              title: 'Smart Contracts',
-              subtitle: 'Learn to develop EOS smart contracts',
-              icon: '/icons/brief-case-icon.svg', //replace with required icon
-              href: '/docs/latest/smart-contracts/',
-            },
-            {
-              label: 'Node Operation',
-              title: 'Node Operation',
-              subtitle: 'Learn how to operate an EOS node',
-              icon: '/icons/db-icon.svg',
-              href: '/docs/latest/node-operation/',
-            },
-            {
-              label: 'Web Development',
-              title: 'Web Development',
-              subtitle: 'Learn to integrate EOS into your web app',
-              icon: '/icons/globe-icon.svg',
-              href: '/docs/latest/web-applications/',
-            },
-            {
-              label: 'EOS EVM',
-              title: 'EOS EVM',
-              subtitle: 'Learn to develop on EOS EVM',
-              icon: '/icons/box-icon.svg',
-              href: '/docs/latest/eos-evm/',
-            }
-          ],
-        },
-        {
-          docId: 'courses',
-          position: 'left',
-          label: 'Courses',
-          to: 'https://learn.eosnetwork.com/',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
-      ],
-    },
     main: {
       firstCards: [
         {
-          icon: '/icons/docs-icon.svg',
+          icon: 'icons/docs-icon.svg',
           title: 'Learn The Basics',
           subtitle: 'Everything you need to know about blockchain to get you started',
           link: '/docs/latest/blockchain-basics/',
@@ -221,49 +168,25 @@ const config = {
           color: 'yellow',
         },
         {
-          icon: '/icons/chat-icon.svg',
+          icon: 'icons/chat-icon.svg',
           title: 'Create an NFT',
           subtitle: 'Learn how to develop non-fungible tokens',
           link: '/docs/latest/smart-contracts/tutorials/create-an-nft',
           color: 'yellow',
         },
         {
-          icon: '/icons/ref-icon.svg',
+          icon: 'icons/ref-icon.svg',
           title: 'Reference',
           subtitle: "Consult the API references explore the EOS RPC",
           link: '/docs/latest/api-listing/',
         },
         {
-          icon: '/icons/docs-icon.svg',
+          icon: 'icons/docs-icon.svg',
           title: 'Glossary',
           subtitle: 'Confused with some terms? Read them all here',
           link: '/docs/latest/glossary',
         }
       ],
-      wideCard: {
-        title: 'EOS EVM',
-        tagline:'A brand new home for EVM developers',
-        subtitle: `Migrate your apps to the world's fastest and cheapest EVM using tools and frameworks you're already familiar with.`,
-        buttonText:'MIGRATE NOW',
-        icon: '/icons/brief-case-icon.svg', //replace with required icon
-        href: '/docs/latest/eos-evm/smart-contracts/migrate-your-smart-contract/',
-      },
-      signUp: {
-        title: 'Sign up for developer alerts',
-        subtitle: `
-          Don't be caught with your pants down. Breaking changes will happen. If you want to stay on top of things when they do make sure to sign up for developer alerts emails.
-        `,
-        action: 'https://eosnetwork.us8.list-manage.com/subscribe/post',
-        buttonText: 'ALERT ME',
-      },
-      intakeForm: {
-        title: "Boost Your App's Success!",
-        subtitle: `
-          Submit your app to our ecosystem page and reach a wider audience, gain exposure, and attract new users to your already built application.
-        `,
-        action: 'https://eosnetwork.com/#ecosystem-intake',
-        buttonText: 'INTAKE FORM',
-      },
     },
     featureFlags: {
       lang: true,
@@ -278,13 +201,22 @@ const config = {
             alt: 'EOS Network',
             src: 'img/eosn_logo_light.png',
           },
-          // keep this items array as is, this is used just to let docosaurus know that something is there
           items: [
             {
-              type: 'doc',
-              docId: 'index',
+              type: 'dropdown',
+              label: 'Learn',
               position: 'left',
-              label: 'Welcome',
+              items: [],
+            },
+            {
+              docId: 'courses',
+              position: 'left',
+              label: 'Courses',
+              to: 'https://learn.eosnetwork.com/',
+            },
+            {
+              type: 'localeDropdown',
+              position: 'right',
             },
           ]
         },
@@ -341,12 +273,12 @@ const config = {
                 {
                   label: 'GitHub',
                   href: 'https://github.com/eosnetworkfoundation',
-                  logo: '/icons/github-icon.svg',
+                  logo: 'icons/github-icon.svg',
                 },
                 {
                   label: 'Discord',
                   href: 'https://discord.gg/XjVqej4uT5',
-                  logo: '/icons/discord-icon.svg',
+                  logo: 'icons/discord-icon.svg',
                 },
               ],
             },

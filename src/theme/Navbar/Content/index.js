@@ -34,13 +34,14 @@ function NavbarContentLayout({left, right}) {
 export default function NavbarContent() {
   const matches = useMediaQuery('(max-width: 996px)');
 
-  const {siteConfig} = useDocusaurusContext();
-  const items = siteConfig.customFields.navbar.items;
+  const {siteConfig, i18n} = useDocusaurusContext();
+  const {navbar: {items} = {}} = useThemeConfig();
 
   const leftItems = items.filter((item) => item.position === 'left');
   const rightItems = items.filter((item) => item.position === 'right');
 
   const searchBarItem = items.find((item) => item.type === 'search');
+
 
   return (
     <NavbarContentLayout

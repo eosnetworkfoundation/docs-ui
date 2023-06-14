@@ -3,6 +3,7 @@ import { useThemeConfig } from '@docusaurus/theme-common';
 import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 import NavbarItem from '@theme/NavbarItem';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate from "@docusaurus/Translate";
 
 import { NavbarMobileSidebarLocaleMenu } from '@site/src/components/NavbarMobileSidebarLocaleMenu/NavbarMobileSidebarLocaleMenu';
 
@@ -11,7 +12,7 @@ export default function NavbarMobilePrimaryMenu() {
   // TODO how can the order be defined for mobile?
   // Should we allow providing a different list of items?
   const { siteConfig } = useDocusaurusContext();
-  const items = siteConfig.customFields.navbar.items;
+  const {navbar: {items} = {}} = useThemeConfig();
   const { lang } = siteConfig.customFields.featureFlags;
   const leftItems = items.filter((item) => item.position === 'left');
   const rightItems = items.filter((item) => item.position === 'right');

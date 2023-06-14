@@ -3,24 +3,22 @@ import React from 'react';
 import { H5_Bold, P_XS } from '../Shared/Typography/Typography';
 
 import styles from './styles.module.css';
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 interface DropDownItemProps {
-  title: string;
-  subtitle: string;
+  children?: React.ReactNode;
   icon: string;
   href: string;
-  onClick?: () => void;
 }
 
-export const DropDownItem = ({ title, subtitle, icon, href, onClick }: DropDownItemProps) => {
+export const DropDownItem = ({ children, icon, href }: DropDownItemProps) => {
   return (
-      <Link href={href} className={styles.wrapper} onClick={onClick}>
+      <Link href={href} className={styles.wrapper}>
         <div className={styles.icon}>
-          <img src={icon} alt={title} />
+          <img src={useBaseUrl(icon)} />
         </div>
         <div className={styles.content}>
-          <H5_Bold>{title}</H5_Bold>
-          <P_XS>{subtitle}</P_XS>
+            {children}
         </div>
       </Link>
   )

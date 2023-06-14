@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useDocsSidebar } from '@docusaurus/theme-common/internal';
 import Layout from '@theme/Layout';
 import BackToTopButton from '@theme/BackToTopButton';
@@ -7,12 +8,20 @@ import DocPageLayoutMain from '@theme/DocPage/Layout/Main';
 import styles from './styles.module.css';
 import { SidebarDABlue } from '@site/static/icons';
 import clsx from 'clsx';
+import { LanguageWarning } from '../../../components/LanguageWarning/LanguageWarning';
 
 export default function DocPageLayout({ children }) {
   const sidebar = useDocsSidebar();
   const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false);
   const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
   const [isManuallyCollapsed, setIsManuallyCollapsed] = useState(false);
+
+  const { siteConfig, i18n } = useDocusaurusContext();
+  const { currentLocale } = i18n;
+  console.log('docusaurusContext', currentLocale);
+
+  let showLanguageWarning = currentLocale !== 'en';
+
 
   useEffect(() => {
     // await for 300ms
@@ -73,6 +82,7 @@ export default function DocPageLayout({ children }) {
             />
           )}
           <DocPageLayoutMain hiddenSidebarContainer={hiddenSidebarContainer}>
+            {showLanguageWarning && (<LanguageWarning />)}
             {children}
           </DocPageLayoutMain>
         </div>

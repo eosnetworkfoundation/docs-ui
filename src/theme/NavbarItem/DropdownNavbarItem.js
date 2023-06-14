@@ -9,6 +9,9 @@ import { isSamePath, useLocalPathname } from '@docusaurus/theme-common/internal'
 import NavbarNavLink from '@theme/NavbarItem/NavbarNavLink';
 import NavbarItem from '@theme/NavbarItem';
 import { DropDownItem } from '@site/src/components/DropDownItem/DropDownItem';
+import Translate from "@docusaurus/Translate";
+import {H5_Bold, P_XS} from "@site/src/components/Shared/Typography/Typography";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 
 function isItemActive(item, localPathname) {
   if (isSamePath(item.to, localPathname)) {
@@ -105,9 +108,22 @@ function DropdownNavbarItemDesktop({
           ))}
         </ul>) : (
         <section className="dropdown__menu custom">
-          {items.map((childItemProps, i) => (
-            <DropDownItem key={i} {...childItemProps} />
-          ))}
+          <DropDownItem key="navd_1" icon="icons/brief-case-icon.svg" href={useBaseUrl("/docs/latest/smart-contracts/")}>
+            <H5_Bold><Translate>Smart Contracts</Translate></H5_Bold>
+            <P_XS><Translate>Learn to develop EOS smart contracts</Translate></P_XS>
+          </DropDownItem>
+          <DropDownItem key="navd_2" icon="icons/db-icon.svg" href={useBaseUrl("/docs/latest/node-operation/")}>
+            <H5_Bold><Translate>Node Operation</Translate></H5_Bold>
+            <P_XS><Translate>Learn how to operate an EOS node</Translate></P_XS>
+          </DropDownItem>
+          <DropDownItem key="navd_3" icon="icons/globe-icon.svg" href={useBaseUrl("/docs/latest/web-applications/")}>
+            <H5_Bold><Translate>Web Development</Translate></H5_Bold>
+            <P_XS><Translate>Learn to integrate EOS into your web app</Translate></P_XS>
+          </DropDownItem>
+          <DropDownItem key="navd_4" icon="icons/box-icon.svg" href={useBaseUrl("/docs/latest/eos-evm/")}>
+            <H5_Bold><Translate>EOS EVM</Translate></H5_Bold>
+            <P_XS><Translate>Learn to develop on EOS EVM</Translate></P_XS>
+          </DropDownItem>
         </section>
       )}
     </div>
@@ -164,9 +180,22 @@ function DropdownNavbarItemMobile({
           ))
         ) : (
           <div className='custom-menu-list'>
-            {items.map((childItemProps, i) => (
-            <DropDownItem key={i} {...childItemProps} onClick={onClick} />
-            ))}
+            <DropDownItem key="navd_1" icon="icons/brief-case-icon.svg" href={useBaseUrl("/docs/latest/smart-contracts/")}>
+              <H5_Bold><Translate>Smart Contracts</Translate></H5_Bold>
+              <P_XS><Translate>Learn to develop EOS smart contracts</Translate></P_XS>
+            </DropDownItem>
+            <DropDownItem key="navd_2" icon="icons/db-icon.svg" href={useBaseUrl("/docs/latest/node-operation/")}>
+              <H5_Bold><Translate>Node Operation</Translate></H5_Bold>
+              <P_XS><Translate>Learn how to operate an EOS node</Translate></P_XS>
+            </DropDownItem>
+            <DropDownItem key="navd_3" icon="icons/globe-icon.svg" href={useBaseUrl("/docs/latest/web-applications/")}>
+              <H5_Bold><Translate>Web Development</Translate></H5_Bold>
+              <P_XS><Translate>Learn to integrate EOS into your web app</Translate></P_XS>
+            </DropDownItem>
+            <DropDownItem key="navd_4" icon="icons/box-icon.svg" href={useBaseUrl("/docs/latest/eos-evm/")}>
+              <H5_Bold><Translate>EOS EVM</Translate></H5_Bold>
+              <P_XS><Translate>Learn to develop on EOS EVM</Translate></P_XS>
+            </DropDownItem>
         </div>
         )}
       </Collapsible>

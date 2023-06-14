@@ -1,0 +1,30 @@
+{
+  "logo.alt": {
+    "message": "EOS Network",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Learn": {
+    "message": "Learn",
+    "description": "Navbar item with label Learn"
+  },
+  "item.label.Courses": {
+    "message": "Courses",
+    "description": "Navbar item with label Courses"
+  },
+  "item.label.Smart Contracts": {
+    "message": "Smart Contracts",
+    "description": "Navbar item with label Smart Contracts"
+  },
+  "item.label.Node Operation": {
+    "message": "Node Operation",
+    "description": "Navbar item with label Node Operation"
+  },
+  "item.label.Web Development": {
+    "message": "Web Development",
+    "description": "Navbar item with label Web Development"
+  },
+  "item.label.EOS EVM": {
+    "message": "EOS EVM",
+    "description": "Navbar item with label EOS EVM"
+  }
+}

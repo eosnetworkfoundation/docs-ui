@@ -97,7 +97,7 @@
     color: var(--eos-color-light);
     font-size: var(--font-size-large);
     line-height: 27px;
-    background-image: url('/icons/email-icon.svg');
+    background-image: url('@site/static/icons/email-icon.svg');
     background-repeat: no-repeat;
     background-position: 25px center;
   }
