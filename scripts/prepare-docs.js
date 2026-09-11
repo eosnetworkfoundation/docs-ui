@@ -31,7 +31,10 @@ const prepareDocs = async() => {
         skipManuals ? Promise.resolve() : downloadManuals()
     ])
 
-    if(!skipApis || !skipManuals) await manualsAndApiMd();
+    if(!skipApis || !skipManuals) {
+        if(skipManuals) fs.ensureDirSync('./manuals');
+        await manualsAndApiMd();
+    }
 
     await removeTmpDir();
 
